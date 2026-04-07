@@ -1,0 +1,25 @@
+{
+  "expo": {
+    "name": "Strategic Number Merge",
+    "slug": "strategic-number-merge",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "resizeMode": "contain",
+      "backgroundColor": "#08121d"
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "package": "com.eyupgurer.strategicnumbermerge"
+    },
+    "web": {
+      "bundler": "metro"
+    }
+  }
+}
