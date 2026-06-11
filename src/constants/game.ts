@@ -3,8 +3,8 @@ export const BOARD_COLUMNS = 8;
 export const INITIAL_FILLED_ROWS = 3;
 export const MIN_SELECTION_LENGTH = 2;
 export const MAX_SELECTION_LENGTH = 4;
+export const PENALTY_WRONG_COUNT = 3;
 
-export const NEW_BLOCK_INTERVAL_MS = 5000;
 export const FALL_STEP_INTERVAL_MS = 160;
 
 export const SCORE_BY_VALUE: Record<number, number> = {

@@ -17,3 +17,12 @@ export type FallingBlock = {
   row: number;
   col: number;
 };
+
+export type LeaderboardEntry = {
+  id: string;
+  playerName: string;
+  score: number;
+  date: string;
+};
+
+export type GamePhase = "playing" | "gameover" | "leaderboard";

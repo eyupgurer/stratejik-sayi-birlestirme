@@ -283,6 +283,34 @@ export function refillBoardAfterClear(
   return nextBoard;
 }
 
+export function getDropIntervalMs(score: number): number {
+  if (score >= 400) return 1000;
+  if (score >= 300) return 2000;
+  if (score >= 200) return 3000;
+  if (score >= 100) return 4000;
+  return 5000;
+}
+
+export function isGameOver(board: Board): boolean {
+  for (let col = 0; col < BOARD_COLUMNS; col += 1) {
+    if (board[0]?.[col] !== null) return true;
+  }
+  return false;
+}
+
+export function applyPenaltyBlocks(board: Board): Board {
+  const nextBoard = cloneBoard(board);
+  for (let col = 0; col < BOARD_COLUMNS; col += 1) {
+    for (let row = 0; row < BOARD_ROWS; row += 1) {
+      if (!nextBoard[row]?.[col]) {
+        nextBoard[row]![col] = createRandomBlock();
+        break;
+      }
+    }
+  }
+  return nextBoard;
+}
+
 export function getAvailableSpawnColumns(board: Board): number[] {
   const columns: number[] = [];
 
