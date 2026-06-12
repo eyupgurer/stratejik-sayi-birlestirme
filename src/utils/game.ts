@@ -301,11 +301,9 @@ export function isGameOver(board: Board): boolean {
 export function applyPenaltyBlocks(board: Board): Board {
   const nextBoard = cloneBoard(board);
   for (let col = 0; col < BOARD_COLUMNS; col += 1) {
-    for (let row = 0; row < BOARD_ROWS; row += 1) {
-      if (!nextBoard[row]?.[col]) {
-        nextBoard[row]![col] = createRandomBlock();
-        break;
-      }
+    const insertRow = getInsertRowForColumn(nextBoard, col);
+    if (insertRow !== null) {
+      nextBoard[insertRow]![col] = createRandomBlock();
     }
   }
   return nextBoard;
